@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>INSTAGRAM SPACER</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head> 
+    <body>
+        <div class= "login-form" >
+            <div class="login-form__logo-container">
+             <h1 style="color:white;font-size:40px;text-align: center;">INSTAGRAM SPACER</h1>
+            </div>
+            <div class="login-form__content">
+                
+                <textarea  class="login-form__input" type="textarea"  id="myinp" rows="10" cols="54" placeholder="Type Your Caption here..."></textarea>
+                
+                <button class="login-form__button" style="font-size:20px;text-align: center;" id="btncopy">CONVERT AND COPY TO CLIPBOARD </button>
+                <span class="tooltip">Copied, Now paste it on Your IG..</span>
+                <br>
+                
+                <button class="login-form__button"  style="font-size:20px;text-align: center;" id="clear">CLEAR</button>
+                <div class="login-form__links">
+                    <p>Show some Love, Follow me on instagram<a class="login-form__link"  href="https://www.instagram.com/deepan__/?hl=en">
+                      DeepanKumar</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script type="text/javascript">
+        const myinp=document.querySelector("#myinp");
+        const btncopy=document.querySelector("#btncopy");
+        const tooltip = document.querySelector(".tooltip");
+        const clear=document.querySelector("#clear");
+  
+  //Copy button
+             btncopy.addEventListener('click', function(){
+             myinp.select();
+
+       
+             if(document.execCommand("copy")){
+          tooltip.classList.add("show");
+           setTimeout(function(){
+          tooltip.classList.remove("show");
+        },1500);
+
+        }else{
+          alert("Something went wrong!");
+        }
+      });
+
+//clear Listener     
+        clear.addEventListener('click', function(){
+            
+                //myinp.value = "";
+                var r=confirm("Are you sure, you want to clear?")
+                if(r==true){
+                    myinp.value = "";
+                }
+                else{
+
+                }
+            
+              
+      });
+
+</script>
+ 
+</html>
